@@ -7,23 +7,28 @@
 }
 
 header {
-    background-color: rgba(255, 0, 106, 0.20);
+    background-color: rgba(255, 237, 209, 0.75);
+    padding: 10px;
 }
 
 header > h1 {
+    font-size: 42px;
     text-align: center;
     font-weight: bold;
     padding: 8px;
-    color: rgb(255, 0, 106);
+    color: rgb(104, 187, 255);
 }
 
 body {
-    font-size: 18px;
-    background-color: rgb(255, 237, 209);
-
+    font-size: 24px;
     font-family: Molengo, sans-serif;
-
     color: rgb(57, 0, 24);
+
+    background-color: rgba(255, 237, 209, 0.2);
+    background-image: url(../images/to-do-bg-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
 }
 
 article {
@@ -42,7 +47,8 @@ main {
 }
 
 article:first-of-type {
-    border: 4px solid red
+    border: 4px solid red;
+    background-color: rgba(255, 237, 209, 0.9);
 }
 
 article > h2 {
@@ -52,16 +58,20 @@ article > h2 {
 
 #inprog {
     border: 4px solid rgb(255, 174, 0);
+    background-color: rgba(255, 237, 209, 0.9);
 }
 #inprog h2 {
     color: rgb(255, 174, 0);
+    padding: 4px 8px;
 }
 
 #done {
     border: 4px solid green;
+    background-color: rgba(255, 237, 209, 0.9);
 }
 #done h2{
     color: green;
+    padding: 4px 8px;
 }
 
 ul {
@@ -69,8 +79,9 @@ ul {
 }
 
 ul li {
-    padding: 6px 8px;
+    padding: 20px 12px;
     text-transform: uppercase;
+    text-align: left;
 }
 
 .list-item1:nth-child(odd) {
@@ -85,24 +96,96 @@ ul li {
     background-color: rgba(0, 255, 0, 0.3);
 }
 
-.checkbox {
-    height: 16px;
-    width: 16px;
-    display: inline;
-}
-
 input[type="checkbox"] {
-    margin-right: 8px;
+    height: 22px;
+    width: 24px;
+    display: inline;
+    padding-top: 10px;
+    margin-right: 10px;
 }
 
-input[type="checkbox"]:checked + span {
-    color: rgb(158, 58, 189);
+.list-item2 input[type="checkbox"]:checked + span {
+    color: rgb(255, 174, 0);
     background-color: rgba(255, 255, 255, 0.5);
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     font-weight: bold;
     border-radius: 10px;
-    border: 2px solid rgb(158, 58, 189);
+    border: 2px solid rgb(255, 174, 0);
+    margin-right: 32px;
+
+    animation: fadeIn 0.5s;
+}
+
+.list-item3 input[type="checkbox"]:checked + span {
+    color: green;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 2px solid green;
+
+    animation: fadeIn 0.5s;
+}
+
+.list-item3 input[type="checkbox"]:checked + span::after {
+    content: '\2713';
+    width: 25px;
+    height: 25px;
+    color: rgb(255, 224, 175);
+    padding-left: 8px;
+    padding-right: 4px;
+    padding-top: 4px;
+    padding-bottom: 8px;
+    margin-left: 1em;
+    margin-top: -10px;
+    border-radius: 50%;
+    background-color: rgb(104, 187, 255);
+    border: 4px solid rgb(0, 75, 137);
+    position: fixed;
+
+    animation: fadeIn 0.5s;
+}
+
+.blurb {
+    background-color: rgba(255, 237, 209, 0.75);
+    border: 4px solid rgb(255, 224, 175);
+    padding: 16px;
+    width: 60%;
+    height: 180px;
+    text-align: left;;
+}
+
+.blurb-title {
+    color: rgb(79, 76, 70);
+    padding-bottom: 16px;
+}
+
+.blurb-text {
+    font-size: 24px;
+    color: rgb(40, 39, 36);
+    padding-bottom: 16px;
+}
+
+footer { 
+    color: white;
+    padding: 20px 0;
+    text-align: center; 
+  }
+
+.sticky-footer {
+    position: sticky;
+    height: 100px;
+    background-color:rgba(255, 224, 175, 0.75);
+    bottom: 0%;
+  }
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
